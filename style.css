@@ -16,6 +16,7 @@ body {
     background-color:var(--purple-100);
     background-image: url(assets/images/background-pattern-mobile.svg);
     background-repeat: no-repeat;
+    background-size: 100%;
     font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
 }
@@ -24,33 +25,38 @@ body {
     background-color: var(--white);
     border-radius: 8px;
     margin: 7rem 1rem;
-    padding: 1.3rem
+    padding: 1.3rem 1.3rem 0;
 }
 
 .title--div,
-.question--div {
+.details--div {
     display: flex;
 }
 
+.details--div {
+    flex-direction: column;
+}
+
 .star {
-    width: 30px;
+    width: 25px;
 }
 
 .title {
-    margin-left: 1.5rem;
+    font-size: 1.7rem;
+    margin-left: 1rem;
 }
 
-.title,
-.question,
-.answer {
+.question {
     padding: 1rem 0;
 }
 
 .summary-btn {
-    display: flex;
-    list-style: none;
     cursor: pointer;
-    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* list-style: none; */
+    width: 100%;
 }
 
 .title,
@@ -59,19 +65,34 @@ body {
 }
 
 .question {
-    font-size: .92rem;
+    font-size: .8rem;
+    text-wrap: balance;
     width: 100%;
 }
 
 .answer {
+    color: var(--purple-600);
     font-size: .72rem;
     line-height: 1.15rem;
-    color: var(--purple-600);
+    padding-bottom: 1rem;
 }
 
 .hr {
     border-top: var(--purple-100) solid 1px;
-    /* margin: .5rem 0; */
+}
+
+details:last-of-type summary {
+    list-style: none;
+    &::after {
+        content: url(assets/images/icon-plus.svg);
+    }
+    [open] &::after {
+        content: url(assets/images/icon-minus.svg);
+    }
+}
+
+details:last-of-type summary::-webkit-details-marker {
+    display: none
 }
 
 
