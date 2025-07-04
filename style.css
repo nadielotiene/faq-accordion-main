@@ -109,6 +109,7 @@ body {
     font-size: .72rem;
     font-weight: var(--regular);
     line-height: 1.15rem;
+    /* text-wrap: balance; */
     padding-bottom: 1rem;
 }
 
